@@ -1,0 +1,16 @@
+.weekbar {
+    
+    display: flex;
+    width: 100%;
+
+    .weekbar__item {
+        width: 14%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #2F74B5;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}

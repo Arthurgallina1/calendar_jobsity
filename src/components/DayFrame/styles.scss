@@ -1,0 +1,16 @@
+.dayframe {
+    width: 100%;
+    border: 1px solid #aaa;
+    height: 95px;
+    &.isWeekendDay {
+        background: #ccc;
+    }
+    .dayframe__container {
+        position: relative;
+        top: 5px;
+        right: -5px;
+        &.isWeekendDay {
+            color: #2f74b5;
+        }
+    }
+}
