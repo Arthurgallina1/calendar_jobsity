@@ -9,8 +9,18 @@
         position: relative;
         top: 5px;
         right: -5px;
-        &.isWeekendDay {
-            color: #2f74b5;
+      
+        // &.isWeekendDay {
+        //     color: #2f74b5;
+        // }
+        &.gray {
+            color: #aaa !important;
+        }
+        &.blue {
+            color: #2f74b5;;
+        }
+        &.isWeekDay {
+            color: black;
         }
     }
 }
