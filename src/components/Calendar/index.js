@@ -53,8 +53,9 @@ export default function Calendar() {
             <Modal />
             <WeekBar />
             <div className='calendar__container'>
-                {daysArray.map((day) => (
+                {daysArray.map((day, i) => (
                     <DayFrame
+                        key={i}
                         day={day.day}
                         month={day.month}
                         selectedMonth={selectedMonth}

@@ -2,9 +2,11 @@
     width: 100%;
     border: 1px solid #aaa;
     height: 95px;
+    overflow-y: auto;
     &.isWeekendDay {
         background: #ccc;
     }
+ 
     .dayframe__container {
         position: relative;
         top: 5px;

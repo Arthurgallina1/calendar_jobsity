@@ -39,15 +39,15 @@ export default function ModalBox() {
 
     function handleSave() {
         const startDateFormatted = format(startDate, "dd/MM/yyyy");
+        const startTimeFormatted = format(startTime, "HH:mm");
         const reminderData = {
             description,
             startDateFormatted,
-            startTime,
+            startTimeFormatted,
             color,
             city,
         };
         dispatch(addReminder(reminderData));
-        console.log(reminderData);
     }
 
     return (
