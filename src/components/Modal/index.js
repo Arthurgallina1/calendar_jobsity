@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Modal from "react-modal";
 import DatetimePicker from "../DatetimePicker";
 import Timepicker from "../Timepicker";
 import Colorpicker from "../Colorpicker";
+import { addReminder } from "../../store/modules/Reminders/actions";
 import "./styles.scss";
 
 const customStyles = {
@@ -24,6 +26,7 @@ export default function ModalBox() {
     const [startTime, setStartTime] = useState(new Date());
     const [color, setColor] = useState("#fff");
     const [city, setCity] = useState("");
+    const dispatch = useDispatch();
 
     function openModal() {
         setIsOpen(true);
@@ -34,7 +37,15 @@ export default function ModalBox() {
     }
 
     function handleSave() {
-        console.log(description, startDate, startTime, color, city);
+        const reminderData = {
+            description,
+            startDate,
+            startTime,
+            color,
+            city,
+        };
+        dispatch(addReminder(reminderData));
+        console.log(reminderData);
     }
 
     return (
