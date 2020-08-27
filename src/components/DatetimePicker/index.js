@@ -7,6 +7,7 @@ export default function Datepicker({ startDate, setStartDate }) {
         <DatePicker
             selected={startDate}
             data-lpignore='true'
+            dateFormat='yyyy/MM/dd'
             className='reminder__input'
             onChange={(date) => setStartDate(date)}
         />

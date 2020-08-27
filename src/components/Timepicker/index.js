@@ -11,6 +11,7 @@ export default function Timepicker({ startTime, setStartTime }) {
             timeIntervals={15}
             timeCaption='Time'
             dateFormat='h:mm aa'
+            // dateFormat='hh:mm'
         />
     );
 }

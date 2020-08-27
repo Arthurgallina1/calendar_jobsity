@@ -17,7 +17,7 @@ export default function Calendar() {
         const daysInPrevMonth = getDaysInMonth(
             new Date(2020, selectedMonth - 1, 1)
         );
-        console.debug("daysInPrevMonth", daysInPrevMonth);
+        // console.debug("daysInPrevMonth", daysInPrevMonth);
         const firstDay = startOfMonth(date);
         const ISOFirstDay = format(firstDay, "i");
 

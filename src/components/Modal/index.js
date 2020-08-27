@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Modal from "react-modal";
+import { format } from "date-fns";
 import DatetimePicker from "../DatetimePicker";
 import Timepicker from "../Timepicker";
 import Colorpicker from "../Colorpicker";
@@ -37,9 +38,10 @@ export default function ModalBox() {
     }
 
     function handleSave() {
+        const startDateFormatted = format(startDate, "dd/MM/yyyy");
         const reminderData = {
             description,
-            startDate,
+            startDateFormatted,
             startTime,
             color,
             city,
