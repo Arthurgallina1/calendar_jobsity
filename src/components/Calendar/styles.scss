@@ -1,6 +1,14 @@
-.calendar__container {
-    width: 100%;
-    // border:1px solid pink;
-    display: grid;
-    grid-template-columns: repeat(7, 132px);
+.calendar {
+    display: flex;
+    .calendar__leftside {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 75%;
+    }
+    .calendar__container {
+        width: 100%;
+        // border:1px solid pink;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
 }

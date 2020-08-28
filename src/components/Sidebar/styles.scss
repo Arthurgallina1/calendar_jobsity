@@ -1,0 +1,16 @@
+.sidebar {
+    flex-basis: 25%;
+    border: 1px solid black;
+    padding: 15px 0;
+    .sidebar__title {
+        color: #5763DE;
+        font-size: 17px;
+        padding:  0 10px;
+        
+    }
+
+    .sidebar__body {
+        margin-top: 15px;
+        border: 1px solid purple;
+    }
+}

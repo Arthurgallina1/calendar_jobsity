@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.scss";
-
 export default function WeekBar() {
     return (
         <div className='weekbar'>

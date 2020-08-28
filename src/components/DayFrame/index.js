@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { getDaysInMonth, isWeekend, format } from "date-fns";
+import { isWeekend, format } from "date-fns";
 import Reminder from "../Reminder";
-import { compareByTime } from "../../utils/utils";
+import { compareByTime } from "../../services/utils";
 import "./styles.scss";
 
-export default function DayFrame({ day, month, selectedMonth }) {
+export default function DayFrame({
+    day,
+    month,
+    selectedMonth,
+    selectedDay,
+    setSelectedDay,
+}) {
     const [reminders, setReminders] = useState([]);
     const isCurrentMonth = month === selectedMonth ? "blue" : "gray";
     const today = new Date(2020, month, day);
     const isDayWeekend = isWeekend(today) ? "isWeekendDay" : "isWeekDay";
+    // const isDaySelected = selectedDay
     const todayFormatted = format(today, "dd/MM/yyyy");
     const remindersState = useSelector((state) => state.reminders);
     useEffect(() => {
@@ -21,7 +28,10 @@ export default function DayFrame({ day, month, selectedMonth }) {
     }, [remindersState, todayFormatted]);
 
     return (
-        <div className={`dayframe  ${isDayWeekend} ${isCurrentMonth}`}>
+        <div
+            className={`dayframe  ${isDayWeekend} ${isCurrentMonth}`}
+            onClick={() => setSelectedDay(new Date(2020, month, day))}
+        >
             <span
                 className={`dayframe__container ${isDayWeekend} ${isCurrentMonth}`}
             >
@@ -29,7 +39,7 @@ export default function DayFrame({ day, month, selectedMonth }) {
             </span>
             {reminders.map((reminder) => {
                 return (
-                    <Reminder reminder={reminder} key={reminder.description} />
+                    <Reminder reminder={reminder} key={reminder.reminderId} />
                 );
             })}
         </div>

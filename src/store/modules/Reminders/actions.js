@@ -4,3 +4,10 @@ export function addReminder(data) {
         payload: data,
     };
 }
+
+export function editReminder(data) {
+    return {
+        type: "@reminder/EDIT_REMINDER",
+        payload: data,
+    };
+}

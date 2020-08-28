@@ -1,6 +1,5 @@
 import React from "react";
-import { FaEdit } from "react-icons/fa";
-import Modal from "../Modal";
+import Modal from "../ReminderModal";
 import "./styles.scss";
 
 export default function Reminder({ reminder }) {
@@ -20,7 +19,7 @@ export default function Reminder({ reminder }) {
             }}
         >
             <span>{reminder.startTimeFormatted}</span>
-            <FaEdit color={"#000"} size={14} onClick={handleEdit} />
+            <Modal isEditting reminder={reminder} />
         </div>
     );
 }

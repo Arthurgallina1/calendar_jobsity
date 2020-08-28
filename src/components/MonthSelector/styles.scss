@@ -1,0 +1,19 @@
+.monthselector {
+    margin: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .monthselector__title {
+        color: #5763DE;
+        font-size: 24px;
+        padding: 0 25px;
+    }
+
+    .monthselector__year {
+        font-size: 18px;
+    }
+    .gray {
+        color: #999;
+
+    }
+}
