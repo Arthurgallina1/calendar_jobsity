@@ -31,7 +31,7 @@ export default function ModalBox({ isEditting, reminder }) {
     const [description, setDescription] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [startTime, setStartTime] = useState(new Date());
-    const [color, setColor] = useState("#fff");
+    const [color, setColor] = useState("#D33115");
     const [city, setCity] = useState("");
     const reminders = useSelector((state) => state.reminders);
     const dispatch = useDispatch();
@@ -63,10 +63,14 @@ export default function ModalBox({ isEditting, reminder }) {
                 reminder.startDateFormatted === startDateFormatted &&
                 reminder.startTimeFormatted === startTimeFormatted
         );
-        console.log(isDateOccuppied);
 
         if (isDateOccuppied.length > 0) {
             setErrorMsg("This date and time is already occupied.");
+            return;
+        }
+
+        if (description === "") {
+            setErrorMsg("Description can't be empty.");
             return;
         }
         const reminderId = isEditting
@@ -91,7 +95,7 @@ export default function ModalBox({ isEditting, reminder }) {
         setDescription("");
         setStartDate(new Date());
         setStartTime(new Date());
-        setColor("#fff");
+        setColor("#D33115");
         setCity("");
     }
 
@@ -143,6 +147,7 @@ export default function ModalBox({ isEditting, reminder }) {
                         <DatetimePicker
                             startDate={startDate}
                             setStartDate={setStartDate}
+                            setErrorMsg={setErrorMsg}
                         />
                     </div>
                     <div className='reminder__input-group'>
@@ -150,6 +155,7 @@ export default function ModalBox({ isEditting, reminder }) {
                             name='timepicker'
                             startTime={startTime}
                             setStartTime={setStartTime}
+                            setErrorMsg={setErrorMsg}
                         />
                     </div>
                     <div className='reminder__input-group'>
