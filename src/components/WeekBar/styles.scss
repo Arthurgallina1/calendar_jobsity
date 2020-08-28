@@ -1,10 +1,12 @@
 .weekbar {
     
-    display: flex;
-    width: 100%;
+    // display: flex;
+    // width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
 
     .weekbar__item {
-        width: 14%;
+        // width: 14%;
         display: flex;
         justify-content: center;
         align-items: center;

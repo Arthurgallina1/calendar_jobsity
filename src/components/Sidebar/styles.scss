@@ -1,16 +1,29 @@
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex-basis: 25%;
-    border: 1px solid black;
-    padding: 15px 0;
+    // border: 1px solid black;
+    padding: 35px 0;
+    border-left: 1px solid #ddd;
     .sidebar__title {
         color: #5763DE;
         font-size: 17px;
-        padding:  0 10px;
+        // padding:  0 15px;
+        align-self: center;
         
     }
 
     .sidebar__body {
         margin-top: 15px;
-        border: 1px solid purple;
+        padding: 15px 0;
+        flex-basis: 75%;
+        // border: 1px solid blue;
+    }
+
+    .sidebar_footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import Modal from "../ReminderModal";
-import "./styles.scss";
 
 export default function Reminder({ reminder }) {
-    const handleEdit = () => {};
     return (
         <div
             style={{

@@ -1,0 +1,28 @@
+.fullreminder {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    .fullreminder__ball {
+        display: flex;
+        align-items: center;
+    }
+    .fullreminder_title {
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-around;
+        flex: 1;
+    }
+    .fullreminder_weather {
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-around;
+    }
+
+    .fullreminder_edit {
+        display: flex;
+        justify-content: space-around;
+    }
+}

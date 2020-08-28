@@ -8,4 +8,13 @@ const compareByTime = (a, b) => {
     return 0;
 };
 
-export { compareByTime };
+const getAndSortReminders = (allReminders, dayFormatted) => {
+    // console.debug("allReminders", allReminders);
+    // console.debug("dayFormatted", dayFormatted);
+    const reminders = allReminders.filter(
+        (reminder) => reminder.startDateFormatted === dayFormatted
+    );
+    return reminders.sort(compareByTime);
+};
+
+export { compareByTime, getAndSortReminders };
