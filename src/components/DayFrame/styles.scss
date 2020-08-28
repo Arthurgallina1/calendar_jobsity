@@ -1,28 +1,32 @@
 .dayframe {
     width: 100%;
-    border: 1px solid #aaa;
+    border: 1px solid #eee;
     height: 95px;
     overflow-y: auto;
     &.isWeekendDay {
-        background: #ccc;
+        background: rgb(240, 240, 243);
     }
  
     .dayframe__container {
         position: relative;
         top: 5px;
         right: -5px;
-      
-        // &.isWeekendDay {
-        //     color: #2f74b5;
-        // }
         &.gray {
             color: #aaa !important;
         }
-        &.blue {
-            color: #2f74b5;;
+        &.current {
+            color: #F14764
         }
         &.isWeekDay {
-            color: black;
+            color: #4B55BF;
         }
     }
+}
+
+.reminder__btn {
+    border: 1px solid #4B55BF;
+    border-radius: 6px;
+    padding: 8px 16px;
+    background: #fff;
+    color: #4B55BF;
 }

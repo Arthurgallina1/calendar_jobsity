@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "react-modal";
 import { format } from "date-fns";
 import { FaEdit } from "react-icons/fa";
@@ -18,6 +18,7 @@ const customStyles = {
         left: "50%",
         right: "auto",
         bottom: "auto",
+        borderRadius: "8px",
         marginRight: "-50%",
         height: "400px",
         transform: "translate(-50%, -50%)",
@@ -26,11 +27,13 @@ const customStyles = {
 
 export default function ModalBox({ isEditting, reminder }) {
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [errorMsg, setErrorMsg] = useState("");
     const [description, setDescription] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [startTime, setStartTime] = useState(new Date());
     const [color, setColor] = useState("#fff");
     const [city, setCity] = useState("");
+    const reminders = useSelector((state) => state.reminders);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -55,6 +58,17 @@ export default function ModalBox({ isEditting, reminder }) {
     function handleSave() {
         const startDateFormatted = format(startDate, "dd/MM/yyyy");
         const startTimeFormatted = format(startTime, "HH:mm");
+        const isDateOccuppied = reminders.filter(
+            (reminder) =>
+                reminder.startDateFormatted === startDateFormatted &&
+                reminder.startTimeFormatted === startTimeFormatted
+        );
+        console.log(isDateOccuppied);
+
+        if (isDateOccuppied.length > 0) {
+            setErrorMsg("This date and time is already occupied.");
+            return;
+        }
         const reminderId = isEditting
             ? reminder.reminderId
             : (startDateFormatted + startTimeFormatted).replace(/(\/|\:)/g, "");
@@ -84,10 +98,10 @@ export default function ModalBox({ isEditting, reminder }) {
     return (
         <div>
             {isEditting ? (
-                <FaEdit color={"#000"} size={14} onClick={openModal} />
+                <FaEdit color={"#4B55BF"} size={14} onClick={openModal} />
             ) : (
                 <button onClick={openModal} className='reminder__btn'>
-                    Add Reminder
+                    <strong> Add Reminder</strong>
                 </button>
             )}
 
@@ -106,8 +120,17 @@ export default function ModalBox({ isEditting, reminder }) {
                             value={description}
                             data-lpignore='true'
                             className='reminder__input'
-                            onChange={(e) => setDescription(e.target.value)}
+                            onChange={(e) => {
+                                if (description.length <= 30) {
+                                    setDescription(e.target.value);
+                                    setErrorMsg("");
+                                } else {
+                                    setDescription(e.target.value);
+                                    setErrorMsg("30 characters limit reached.");
+                                }
+                            }}
                         />
+                        {errorMsg && <span>{errorMsg}</span>}
                     </div>
                     <div className='reminder__input-group'>
                         <Colorpicker
@@ -139,15 +162,13 @@ export default function ModalBox({ isEditting, reminder }) {
                             onChange={(e) => setCity(e.target.value)}
                         />
                     </div>
-                    {isEditting ? (
-                        <button type='button' onClick={handleSave}>
-                            Save edit
-                        </button>
-                    ) : (
-                        <button type='button' onClick={handleSave}>
-                            Save
-                        </button>
-                    )}
+                    <button
+                        type='button'
+                        onClick={handleSave}
+                        disabled={description.length > 30}
+                    >
+                        Save
+                    </button>
 
                     <button type='button' onClick={closeModal}>
                         Close

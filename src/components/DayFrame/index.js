@@ -13,7 +13,7 @@ export default function DayFrame({
     setSelectedDay,
 }) {
     const [reminders, setReminders] = useState([]);
-    const isCurrentMonth = month === selectedMonth ? "blue" : "gray";
+    const isCurrentMonth = month === selectedMonth ? "current" : "gray";
     const today = new Date(2020, month, day);
     const isDayWeekend = isWeekend(today) ? "isWeekendDay" : "isWeekDay";
     // const isDaySelected = selectedDay

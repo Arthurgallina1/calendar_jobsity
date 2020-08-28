@@ -3,6 +3,12 @@
     display: flex;
     justify-content: space-between;
     // align-items: center;
+    color: #555;
+
+    small {
+        color: #777;
+        font-size: 13px;
+    }
     .fullreminder__ball {
         display: flex;
         align-items: center;
@@ -11,18 +17,17 @@
         padding: 0 12px;
         display: flex;
         flex-direction: column;
-        // justify-content: space-around;
         flex: 1;
     }
     .fullreminder_weather {
         padding: 0 12px;
         display: flex;
         flex-direction: column;
-        // justify-content: space-around;
     }
 
     .fullreminder_edit {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: flex-end;
     }
 }

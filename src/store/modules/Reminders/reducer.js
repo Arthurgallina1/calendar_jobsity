@@ -13,6 +13,16 @@ export default function reminders(state = INITIAL_STATE, action) {
                 return reminder;
             });
 
+        case "@reminder/DELETE_REMINDER":
+            return state.filter(
+                (reminder) => reminder.reminderId !== action.payload
+            );
+
+        case "@reminder/DELETE_DAY_REMINDER":
+            return state.filter(
+                (reminder) => reminder.startDateFormatted !== action.payload
+            );
+
         default:
             return state;
     }
