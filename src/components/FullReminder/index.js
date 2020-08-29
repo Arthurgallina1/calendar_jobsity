@@ -36,7 +36,9 @@ export default function Reminder({ reminder }) {
                 <strong>
                     <span>{reminder.city}</span>
                 </strong>
-                <small>{weather && (weather.main, weather.temp)}</small>
+                <small>
+                    {weather.main}, {weather.temp}&#176;C
+                </small>
                 {/* <small>{reminder.startTimeFormatted}</small> */}
             </div>
             <div className='fullreminder_edit'>
