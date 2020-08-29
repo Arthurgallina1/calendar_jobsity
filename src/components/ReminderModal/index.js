@@ -104,7 +104,11 @@ export default function ModalBox({ isEditting, reminder }) {
             {isEditting ? (
                 <FaEdit color={"#4B55BF"} size={14} onClick={openModal} />
             ) : (
-                <button onClick={openModal} className='reminder__btn'>
+                <button
+                    onClick={openModal}
+                    className='reminder__btn'
+                    data-test='add-btn'
+                >
                     <strong> Add Reminder</strong>
                 </button>
             )}

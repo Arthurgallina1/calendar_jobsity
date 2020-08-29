@@ -17,4 +17,15 @@ const getAndSortReminders = (allReminders, dayFormatted) => {
     return reminders.sort(compareByTime);
 };
 
-export { compareByTime, getAndSortReminders };
+const data = {
+    reminderId: "280820202019",
+    description: "Party",
+    startDate: "2020-08-28T23:19:58.154Z",
+    startDateFormatted: "28/08/2020",
+    startTime: "2020-08-28T23:19:58.154Z",
+    startTimeFormatted: "20:19",
+    color: "#fa28ff",
+    city: "São Paulo",
+};
+
+export { compareByTime, getAndSortReminders, data };
