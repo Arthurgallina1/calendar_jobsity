@@ -34,11 +34,8 @@ export default function MonthSelector({ selectedMonth, setSelectedMonth }) {
                 {monthsById.map((month) => {
                     return (
                         month.id === selectedMonth && (
-                            <div className='monthselector__div'>
-                                <span
-                                    className='monthselector__title'
-                                    key={month.id}
-                                >
+                            <div className='monthselector__div' key={month.id}>
+                                <span className='monthselector__title'>
                                     {month.month}
                                 </span>
                             </div>

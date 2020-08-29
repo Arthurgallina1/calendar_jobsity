@@ -39,7 +39,11 @@ export default function DayFrame({
             </span>
             {reminders.map((reminder) => {
                 return (
-                    <Reminder reminder={reminder} key={reminder.reminderId} />
+                    <Reminder
+                        reminder={reminder}
+                        key={reminder.reminderId}
+                        data-test='reminder'
+                    />
                 );
             })}
         </div>
