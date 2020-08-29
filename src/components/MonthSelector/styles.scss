@@ -3,6 +3,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .monthselector_leftside {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .monthselector__div {
+        min-width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
     .monthselector__title {
         color: #5763DE;
         font-size: 24px;

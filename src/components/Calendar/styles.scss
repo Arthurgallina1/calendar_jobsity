@@ -16,4 +16,15 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
     }
+    @media (max-width: 660px) {
+        .calendar__container {
+            width: 100%;
+            // border:1px solid pink;
+            display: grid;
+            grid-template-columns: repeat(7, 30px);
+        }
+    }
+ 
+
+
 }

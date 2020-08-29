@@ -9,8 +9,6 @@ const compareByTime = (a, b) => {
 };
 
 const getAndSortReminders = (allReminders, dayFormatted) => {
-    // console.debug("allReminders", allReminders);
-    // console.debug("dayFormatted", dayFormatted);
     const reminders = allReminders.filter(
         (reminder) => reminder.startDateFormatted === dayFormatted
     );
