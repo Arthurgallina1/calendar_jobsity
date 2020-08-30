@@ -30,7 +30,7 @@ button {
 }
 
 .App {
-    height: 98vh;
+    min-height: 100vh;
     width: 100%;
     padding: 40px 35px;
     background: linear-gradient(-110deg, #606EEC 80%, #EB736E 60%);

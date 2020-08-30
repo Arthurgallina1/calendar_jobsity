@@ -21,6 +21,15 @@
             color: #4B55BF;
         }
     }
+
+ 
+
+}
+
+@media (max-height: 760px) {
+    .dayframe {
+        height: 60px;
+    }
 }
 
 .reminder__btn {
