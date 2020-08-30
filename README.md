@@ -5,7 +5,7 @@
 # A+ Calendar
 
 
-[![Author](https://img.shields.io/badge/author-Arthur-EE4D64?style=flat-square)](https://github.com/Arthurgallina1)
+[![Author](https://img.shields.io/badge/author-Arthur%20Gallina-EE4D64?style=flat-square)](https://github.com/Arthurgallina1)
 
 > An Online Calendar where you can check dates and add/remove/edit reminders with description, day, time and city to get the weather. 
 
@@ -29,19 +29,23 @@ It's important to mention that this is an assignment for a job application **onl
 
 # :rocket: Features
 
-* Open, edit and save files.
-* Search for words in files.
+* A 2020 calendar.
+* Add reminder with date, time, color and city to get the weather.
 
 
 # :construction_worker: Installation
 
 **You need to install [Node.js](https://nodejs.org/en/download/), [Yarn](https://yarnpkg.com/) and then clone the project via HTTPS, running this command:**
 
-```git clone https://github.com/Arthurgallina1/online_editor.git```
+```git clone https://github.com/Arthurgallina1/calendar_jobsity```
 
 **Install dependencies**
 
 ```yarn```
+
+**Add API Key**
+
+```Inside de file ./src/services/api.js you should change the API_KEY to your actual API KEY.```
 
 # :runner: Getting Started
 
@@ -53,7 +57,7 @@ Run the following command in order to start the application locally:
 
 # :postbox: Techs
 
-The tecnologies used in this project are [React](https://pt-br.reactjs.org/) + [Styled Components](https://styled-components.com/) to handle scoped CSS.
+The tecnologies used in this project are [React](https://pt-br.reactjs.org/) + [SCSS](https://sass-lang.com/).
 
 # :closed_book: License
 
