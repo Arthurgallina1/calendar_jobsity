@@ -43,6 +43,10 @@ It's important to mention that this is an assignment for a job application **onl
 
 ```yarn```
 
+**Add API Key**
+
+```Inside de file ./src/services/api.js you should change the API_KEY to your actual API KEY.```
+
 # :runner: Getting Started
 
 Run the following command in order to start the application locally:
