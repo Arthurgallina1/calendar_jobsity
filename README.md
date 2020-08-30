@@ -5,7 +5,7 @@
 # A+ Calendar
 
 
-[![Author](https://img.shields.io/badge/author-Arthur-EE4D64?style=flat-square)](https://github.com/Arthurgallina1)
+[![Author](https://img.shields.io/badge/author-Arthur%20Gallina-EE4D64?style=flat-square)](https://github.com/Arthurgallina1)
 
 > An Online Calendar where you can check dates and add/remove/edit reminders with description, day, time and city to get the weather. 
 
