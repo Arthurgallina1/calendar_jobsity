@@ -45,7 +45,7 @@ It's important to mention that this is an assignment for a job application **onl
 
 **Add API Key**
 
-```Inside de file ./src/services/api.js you should change the API_KEY to your actual API KEY.```
+```Inside the file ./src/services/api.js you should change the API_KEY to your actual API KEY.```
 
 # :runner: Getting Started
 
